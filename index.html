@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banerjee Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,40 +43,46 @@
             font-size: 16px;
         }
         .contact-info a {
-            color: #0066cc;
+            color: #fff;
             text-decoration: none;
             display: inline-block;
             margin: 5px;
             padding: 10px 20px;
             border-radius: 5px;
             font-weight: bold;
-            background-color: #ddd;
+            background-color: #444;
             transition: background-color 0.3s;
         }
         .contact-info a:hover {
-            background-color: #ccc;
+            background-color: #333;
+        }
+        .contact-info i {
+            margin-right: 8px;
         }
         .promo-message {
-            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            height: 50px;
+            line-height: 50px;
             font-size: 18px;
-            font-weight: bold;
-            color: #d9534f;
-        }
-        .promo-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
             font-weight: bold;
             color: #fff;
             background-color: #d9534f;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
         }
-        .promo-button:hover {
-            background-color: #c9302c;
-            transform: scale(1.05);
+        .promo-message::before {
+            content: "Special Offer: Get 10% off on your first purchase!";
+            position: absolute;
+            white-space: nowrap;
+            animation: scroll-left 10s linear infinite;
+        }
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
         @media (max-width: 600px) {
             .header {
@@ -102,10 +109,10 @@
         <h2>Welcome to Banerjee Shop!</h2>
         <p>We offer a wide range of food items and groceries to meet all your needs.</p>
         <div class="contact-info">
-            <a href="tel:+919641752009">Call to place an order</a>
-            <a href="https://wa.me/916294390641">WhatsApp your order</a>
+            <a href="tel:+919641752009"><i class="fas fa-phone-alt"></i>Call to place an order</a>
+            <a href="https://wa.me/916294390641"><i class="fab fa-whatsapp"></i>WhatsApp your order</a>
         </div>
-        <button class="promo-button">Special Offer: Get 10% off on your first purchase!</button>
+        <div class="promo-message"></div>
     </div>
 </body>
 </html>
