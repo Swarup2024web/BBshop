@@ -32,11 +32,12 @@
             height: 60px;
             border-radius: 50%;
             margin-right: 15px;
+            text-decoration: none;
         }
-        .header h1 {
-            margin: 0;
+        .header h1 a {
+            color: #fff;
+            text-decoration: none;
             font-size: 24px;
-            flex-grow: 1;
         }
         .nav-links {
             display: flex;
@@ -54,6 +55,20 @@
         .content {
             padding: 20px;
         }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
         .item {
             display: flex;
             justify-content: space-between;
@@ -63,6 +78,7 @@
             margin-bottom: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            position: relative;
         }
         .item img {
             width: 100px;
@@ -104,8 +120,33 @@
         .item-order a:hover {
             background-color: #333;
         }
+        .available {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .load-more {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .load-more button {
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .load-more button:hover {
+            background-color: #333;
+        }
         @media (max-width: 600px) {
-            .header h1 {
+            .header h1 a {
                 font-size: 18px;
             }
             .nav-links {
@@ -116,8 +157,8 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">B</div>
-        <h1>B-Shop</h1>
+        <a href="index.html" class="logo">B</a>
+        <h1><a href="index.html">B-Shop</a></h1>
         <div class="nav-links">
             <a href="groceries.html">Groceries</a>
             <a href="foods.html">Foods</a>
@@ -127,125 +168,175 @@
 
     <div class="content">
         <h2>Groceries</h2>
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Potato">
-            <div class="item-info">
-                <h3>Potato</h3>
-                <p>Unit: 1 kg</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 30</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for groceries, foods, or others..." oninput="filterItems()">
         </div>
 
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Onion">
-            <div class="item-info">
-                <h3>Onion</h3>
-                <p>Unit: 1 kg</p>
+        <div id="grocery-list">
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Potato.jpg" alt="Potato">
+                <div class="item-info">
+                    <h3>Potato</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 30</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
             </div>
-            <div class="item-order">
-                <div class="price">Rs. 25</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
+
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Onions.jpg" alt="Onion">
+                <div class="item-info">
+                    <h3>Onion</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 25</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
             </div>
+
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Tomato.jpg" alt="Tomato">
+                <div class="item-info">
+                    <h3>Tomato</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 40</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
+            </div>
+
+            <!-- Add more items here as necessary -->
+
         </div>
 
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Tomato">
-            <div class="item-info">
-                <h3>Tomato</h3>
-                <p>Unit: 1 kg</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 40</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Rice">
-            <div class="item-info">
-                <h3>Rice</h3>
-                <p>Unit: 1 kg</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 60</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Wheat Flour">
-            <div class="item-info">
-                <h3>Wheat Flour</h3>
-                <p>Unit: 1 kg</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 45</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Sugar">
-            <div class="item-info">
-                <h3>Sugar</h3>
-                <p>Unit: 1 kg</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 40</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Salt">
-            <div class="item-info">
-                <h3>Salt</h3>
-                <p>Unit: 1 kg</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 20</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Tea Powder">
-            <div class="item-info">
-                <h3>Tea Powder</h3>
-                <p>Unit: 500g</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 120</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Cooking Oil">
-            <div class="item-info">
-                <h3>Cooking Oil</h3>
-                <p>Unit: 1 litre</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 150</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/100" alt="Lentils">
-            <div class="item-info">
-                <h3>Lentils</h3>
-                <p>Unit: 1 kg</p>
-            </div>
-            <div class="item-order">
-                <div class="price">Rs. 80</div>
-                <a href="https://wa.me/916294390641">Place Order</a>
-            </div>
+        <div class="load-more">
+            <button onclick="loadMoreItems()">Load More</button>
         </div>
     </div>
+
+    <script>
+        function loadMoreItems() {
+            const groceryList = document.getElementById('grocery-list');
+            const itemsToAdd = `
+                <div class="item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Rice_%28IRRI%29.jpg" alt="Rice">
+                    <div class="item-info">
+                        <h3>Rice</h3>
+                        <p>Unit: 1 kg</p>
+                    </div>
+                    <div class="item-order">
+                        <div class="price">Rs. 60</div>
+                        <a href="https://wa.me/916294390641">Place Order</a>
+                    </div>
+                    <div class="available">Available</div>
+                </div>
+                <div class="item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Wheat_flour_1kg.jpg" alt="Wheat Flour">
+                    <div class="item-info">
+                        <h3>Wheat Flour</h3>
+                        <p>Unit: 1 kg</p>
+                    </div>
+                    <div class="item-order">
+                        <div class="price">Rs. 45</div>
+                        <a href="https://wa.me/916294390641">Place Order</a>
+                    </div>
+                    <div class="available">Available</div>
+                </div>
+                <div class="item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Sugar_cubes.jpg" alt="Sugar">
+                    <div class="item-info">
+                        <h3>Sugar</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 40</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Milk_bottles.jpg" alt="Milk">
+                <div class="item-info">
+                    <h3>Milk</h3>
+                    <p>Unit: 1 liter</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 50</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Egg_carton.jpg" alt="Eggs">
+                <div class="item-info">
+                    <h3>Eggs</h3>
+                    <p>Unit: 12 pcs</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 60</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Bottled_Water.jpg" alt="Water Bottle">
+                <div class="item-info">
+                    <h3>Water Bottle</h3>
+                    <p>Unit: 1 liter</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 20</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Salt_shaker.jpg" alt="Salt">
+                <div class="item-info">
+                    <h3>Salt</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 15</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
+            </div>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Chilli_powder.jpg" alt="Chilli Powder">
+                <div class="item-info">
+                    <h3>Chilli Powder</h3>
+                    <p>Unit: 100 g</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 20</div>
+                    <a href="https://wa.me/916294390641">Place Order</a>
+                </div>
+                <div class="available">Available</div>
+            </div>
+            `;
+            groceryList.innerHTML += itemsToAdd;
+        }
+
+        function filterItems() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                const itemName = item.querySelector('.item-info h3').innerText.toLowerCase();
+                if (itemName.includes(searchTerm)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
