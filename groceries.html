@@ -77,6 +77,9 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         .item:hover {
             transform: scale(1.02);
@@ -85,7 +88,10 @@
         .item-icon {
             font-size: 80px;
             color: #ff5722; /* Vibrant color for the basket icon */
-            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+        .item-info {
+            flex-grow: 1;
         }
         .item-info h3 {
             margin: 0;
@@ -238,20 +244,54 @@
             <div class="item">
                 <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
-                    <h3>Cucumber</h3>
+                    <h3>Beans</h3>
                     <p>Unit: 1 kg</p>
                 </div>
                 <div class="item-order">
-                    <div class="price">Rs. 20</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cucumber%20%28Units:%201%20kg%29">Place Order</a>
+                    <div class="price">Rs. 45</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Beans%20%28Units:%201%20kg%29">Place Order</a>
+                </div>
+            </div>
+
+            <!-- Example Item 8 -->
+            <div class="item">
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
+                <div class="item-info">
+                    <h3>Spinach</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 30</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Spinach%20%28Units:%201%20kg%29">Place Order</a>
+                </div>
+            </div>
+
+            <!-- Example Item 9 -->
+            <div class="item">
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
+                <div class="item-info">
+                    <h3>Cauliflower</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 55</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cauliflower%20%28Units:%201%20kg%29">Place Order</a>
+                </div>
+            </div>
+
+            <!-- Example Item 10 -->
+            <div class="item">
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
+                <div class="item-info">
+                    <h3>Cabbage</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 25</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cabbage%20%28Units:%201%20kg%29">Place Order</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer style="background-color: #282c34; color: #ffffff; padding: 20px; text-align: center; position: fixed; width: 100%; bottom: 0; box-shadow: 0 -2px 4px rgba(0,0,0,0.1);">
-        <p>&copy; 2024 B-Shop. All rights reserved.</p>
-    </footer>
 </body>
 </html>
