@@ -88,7 +88,7 @@
             margin-top: 20px;
         }
         .promo-message::before {
-            content: "Special Offer: Get 10% off on your first purchase!";
+            content: "Special Offer: Get 10% off on your first purchase! (t&c)";
             position: absolute;
             white-space: nowrap;
             animation: scroll-left 10s linear infinite;
@@ -100,6 +100,11 @@
             100% {
                 transform: translateX(-100%);
             }
+        }
+        .promo-terms {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #d9534f;
         }
         .home-delivery {
             background-color: #fff;
@@ -171,6 +176,7 @@
             <a href="https://wa.me/916294390641"><i class="fab fa-whatsapp"></i>WhatsApp your order</a>
         </div>
         <div class="promo-message"></div>
+        <div class="promo-terms">(t&c) Offer is valid once for one phone number and if the order is above Rs. 199.</div>
     </div>
     <div class="home-delivery">
         <h2>Home Delivery</h2>
