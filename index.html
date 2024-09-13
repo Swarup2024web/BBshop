@@ -13,10 +13,11 @@
             background-color: #f4f4f4;
         }
         .header {
+            display: flex;
+            align-items: center;
             background-color: #333;
             color: #fff;
-            padding: 20px;
-            text-align: center;
+            padding: 10px;
         }
         .logo {
             font-size: 36px;
@@ -24,8 +25,13 @@
             background-color: #444;
             color: #fff;
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 50%;
+            margin-right: 15px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
         }
         .content {
             padding: 20px;
@@ -38,15 +44,52 @@
         .contact-info a {
             color: #0066cc;
             text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #ddd;
+            transition: background-color 0.3s;
         }
         .contact-info a:hover {
-            text-decoration: underline;
+            background-color: #ccc;
         }
         .promo-message {
             margin-top: 20px;
             font-size: 18px;
             font-weight: bold;
             color: #d9534f;
+        }
+        .promo-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #d9534f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .promo-button:hover {
+            background-color: #c9302c;
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .contact-info a {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
         }
     </style>
 </head>
@@ -59,13 +102,10 @@
         <h2>Welcome to Banerjee Shop!</h2>
         <p>We offer a wide range of food items and groceries to meet all your needs.</p>
         <div class="contact-info">
-            <p>Contact us:</p>
-            <p>Phone: +91 9641752009</p>
-            <p>WhatsApp: +91 6294390641</p>
+            <a href="tel:+919641752009">Call to place an order</a>
+            <a href="https://wa.me/916294390641">WhatsApp your order</a>
         </div>
-        <div class="promo-message">
-            <p>Special Offer: Get 10% off on your first purchase!</p>
-        </div>
+        <button class="promo-button">Special Offer: Get 10% off on your first purchase!</button>
     </div>
 </body>
 </html>
