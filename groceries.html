@@ -10,34 +10,34 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
             color: #333;
-            background-color: #f4f4f4;
-            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
+            background-color: #282c34;
+            color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .logo {
             font-size: 36px;
             font-weight: bold;
-            background-color: #444;
-            color: #fff;
+            color: #ffffff;
+            background-color: #61dafb;
             display: flex;
             align-items: center;
             justify-content: center;
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            margin-right: 15px;
             text-decoration: none;
+            margin-right: 15px;
         }
         .header h1 a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
             font-size: 24px;
         }
@@ -46,86 +46,96 @@
             gap: 20px;
         }
         .nav-links a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
             font-size: 16px;
             transition: color 0.3s;
         }
         .nav-links a:hover {
-            color: #d9534f;
+            color: #61dafb;
         }
         .content {
             padding: 20px;
         }
         h2 {
             text-align: center;
+            font-size: 28px;
+            color: #282c34;
             margin-bottom: 20px;
         }
-        .item {
+        .item-container {
             display: flex;
-            align-items: center;
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .item {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 300px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         .item-icon {
-            font-size: 100px;
-            color: #333;
-        }
-        .item-info {
-            flex: 1;
-            padding-left: 15px;
+            font-size: 80px;
+            color: #ff5722; /* Vibrant color for the basket icon */
+            margin-bottom: 15px;
         }
         .item-info h3 {
             margin: 0;
-            font-size: 18px;
+            font-size: 22px;
+            color: #333;
         }
         .item-info p {
             margin: 5px 0;
             font-size: 16px;
+            color: #666;
         }
         .item-order {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-top: 15px;
         }
         .item-order .price {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #333;
         }
         .item-order a {
             text-decoration: none;
-            color: #fff;
-            background-color: #444;
+            color: #ffffff;
+            background-color: #ff5722;
             padding: 10px 20px;
             border-radius: 25px;
             font-weight: bold;
             transition: background-color 0.3s;
         }
         .item-order a:hover {
-            background-color: #333;
+            background-color: #e64a19;
         }
         @media (max-width: 600px) {
             .header h1 a {
-                font-size: 18px;
+                font-size: 20px;
             }
             .nav-links {
                 gap: 10px;
             }
             .item-icon {
-                font-size: 80px;
+                font-size: 60px;
             }
             .item-info h3 {
-                font-size: 16px;
+                font-size: 18px;
             }
             .item-info p {
                 font-size: 14px;
             }
             .item-order .price {
-                font-size: 16px;
+                font-size: 18px;
             }
         }
     </style>
@@ -145,12 +155,10 @@
     <!-- Content -->
     <div class="content">
         <h2>Groceries</h2>
-
-        <!-- Grocery List -->
-        <div id="grocery-list">
+        <div class="item-container">
             <!-- Example Item 1 -->
             <div class="item">
-                <i class="fa fa-potato item-icon" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Potato</h3>
                     <p>Unit: 1 kg</p>
@@ -163,7 +171,7 @@
 
             <!-- Example Item 2 -->
             <div class="item">
-                <i class="fa fa-onion item-icon" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Onion</h3>
                     <p>Unit: 1 kg</p>
@@ -176,7 +184,7 @@
 
             <!-- Example Item 3 -->
             <div class="item">
-                <i class="fa fa-rice item-icon" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Rice</h3>
                     <p>Unit: 1 kg</p>
@@ -189,7 +197,7 @@
 
             <!-- Example Item 4 -->
             <div class="item">
-                <i class="fa fa-tomato item-icon" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Tomato</h3>
                     <p>Unit: 1 kg</p>
@@ -202,7 +210,7 @@
 
             <!-- Example Item 5 -->
             <div class="item">
-                <i class="fa fa-carrot item-icon" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Carrot</h3>
                     <p>Unit: 1 kg</p>
@@ -215,7 +223,7 @@
 
             <!-- Example Item 6 -->
             <div class="item">
-                <i class="fa fa-garlic item-icon" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Garlic</h3>
                     <p>Unit: 1 kg</p>
@@ -228,7 +236,7 @@
 
             <!-- Example Item 7 -->
             <div class="item">
-                <i class="fa fa-cucumber item-icon" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Cucumber</h3>
                     <p>Unit: 1 kg</p>
@@ -238,46 +246,12 @@
                     <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cucumber%20%28Units:%201%20kg%29">Place Order</a>
                 </div>
             </div>
-
-            <!-- Example Item 8 -->
-            <div class="item">
-                <i class="fa fa-eggplant item-icon" aria-hidden="true"></i>
-                <div class="item-info">
-                    <h3>Eggplant</h3>
-                    <p>Unit: 1 kg</p>
-                </div>
-                <div class="item-order">
-                    <div class="price">Rs. 45</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Eggplant%20%28Units:%201%20kg%29">Place Order</a>
-                </div>
-            </div>
-
-            <!-- Example Item 9 -->
-            <div class="item">
-                <i class="fa fa-bell-pepper item-icon" aria-hidden="true"></i>
-                <div class="item-info">
-                    <h3>Bell Pepper</h3>
-                    <p>Unit: 1 kg</p>
-                </div>
-                <div class="item-order">
-                    <div class="price">Rs. 55</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Bell%20Pepper%20%28Units:%201%20kg%29">Place Order</a>
-                </div>
-            </div>
-
-            <!-- Example Item 10 -->
-            <div class="item">
-                <i class="fa fa-pumpkin item-icon" aria-hidden="true"></i>
-                <div class="item-info">
-                    <h3>Pumpkin</h3>
-                    <p>Unit: 1 kg</p>
-                </div>
-                <div class="item-order">
-                    <div class="price">Rs. 60</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Pumpkin%20%28Units:%201%20kg%29">Place Order</a>
-                </div>
-            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer style="background-color: #282c34; color: #ffffff; padding: 20px; text-align: center; position: fixed; width: 100%; bottom: 0; box-shadow: 0 -2px 4px rgba(0,0,0,0.1);">
+        <p>&copy; 2024 B-Shop. All rights reserved.</p>
+    </footer>
 </body>
 </html>
