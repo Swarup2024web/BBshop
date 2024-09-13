@@ -59,19 +59,6 @@
         h2 {
             margin-bottom: 10px;
         }
-        .search-bar {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .search-bar input {
-            padding: 10px;
-            width: 100%;
-            max-width: 500px;
-            font-size: 16px;
-            border: 2px solid #333;
-            border-radius: 5px;
-        }
         .item {
             display: flex;
             justify-content: space-between;
@@ -123,31 +110,6 @@
         .item-order a:hover {
             background-color: #333;
         }
-        .available {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: green;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        .load-more {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .load-more button {
-            padding: 10px 20px;
-            background-color: #444;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .load-more button:hover {
-            background-color: #333;
-        }
         @media (max-width: 600px) {
             .header h1 a {
                 font-size: 18px;
@@ -173,14 +135,10 @@
     <!-- Content -->
     <div class="content">
         <h2>Groceries</h2>
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <input type="text" id="search" placeholder="Search for groceries, foods, or others..." oninput="filterItems()">
-        </div>
 
         <!-- Grocery List -->
         <div id="grocery-list">
-            <!-- Example Item -->
+            <!-- Example Item 1 -->
             <div class="item">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Potato.jpg" alt="Potato">
                 <div class="item-info">
@@ -189,12 +147,11 @@
                 </div>
                 <div class="item-order">
                     <div class="price">Rs. 30</div>
-                    <a href="https://wa.me/916294390641">Place Order</a>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Potato%20%28Units:%201%20kg%29">Place Order</a>
                 </div>
-                <div class="available">Available</div>
             </div>
 
-            <!-- Add more items like this -->
+            <!-- Example Item 2 -->
             <div class="item">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Onions.jpg" alt="Onion">
                 <div class="item-info">
@@ -203,60 +160,32 @@
                 </div>
                 <div class="item-order">
                     <div class="price">Rs. 25</div>
-                    <a href="https://wa.me/916294390641">Place Order</a>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Onion%20%28Units:%201%20kg%29">Place Order</a>
                 </div>
-                <div class="available">Available</div>
             </div>
-        </div>
 
-        <!-- Load More Button -->
-        <div class="load-more">
-            <button onclick="loadMoreItems()">Load More</button>
+            <!-- Example Item 3 -->
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Rice_%28IRRI%29.jpg" alt="Rice">
+                <div class="item-info">
+                    <h3>Rice</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 60</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Rice%20%28Units:%201%20kg%29">Place Order</a>
+                </div>
+            </div>
+
+            <!-- Add more items similarly -->
         </div>
     </div>
 
     <script>
+        // WhatsApp text automation example for one item
         function loadMoreItems() {
             const groceryList = document.getElementById('grocery-list');
-            const itemsToAdd = `
-                <div class="item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Rice_%28IRRI%29.jpg" alt="Rice">
-                    <div class="item-info">
-                        <h3>Rice</h3>
-                        <p>Unit: 1 kg</p>
-                    </div>
-                    <div class="item-order">
-                        <div class="price">Rs. 60</div>
-                        <a href="https://wa.me/916294390641">Place Order</a>
-                    </div>
-                    <div class="available">Available</div>
-                </div>
-                <div class="item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Wheat_flour_1kg.jpg" alt="Wheat Flour">
-                    <div class="item-info">
-                        <h3>Wheat Flour</h3>
-                        <p>Unit: 1 kg</p>
-                    </div>
-                    <div class="item-order">
-                        <div class="price">Rs. 45</div>
-                        <a href="https://wa.me/916294390641">Place Order</a>
-                    </div>
-                    <div class="available">Available</div>
-                </div>`;
-            groceryList.innerHTML += itemsToAdd;
-        }
-
-        function filterItems() {
-            const searchTerm = document.getElementById('search').value.toLowerCase();
-            const items = document.querySelectorAll('.item');
-            items.forEach(item => {
-                const itemName = item.querySelector('.item-info h3').innerText.toLowerCase();
-                if (itemName.includes(searchTerm)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            // Code to load more items can be added later if required
         }
     </script>
 </body>
