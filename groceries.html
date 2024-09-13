@@ -63,7 +63,6 @@
         }
         .item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             background-color: #fff;
             padding: 15px;
@@ -71,11 +70,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        .item img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 10px;
+        .item-icon {
+            font-size: 100px;
+            color: #333;
         }
         .item-info {
             flex: 1;
@@ -118,9 +115,8 @@
             .nav-links {
                 gap: 10px;
             }
-            .item img {
-                width: 80px;
-                height: 80px;
+            .item-icon {
+                font-size: 80px;
             }
             .item-info h3 {
                 font-size: 16px;
@@ -154,7 +150,7 @@
         <div id="grocery-list">
             <!-- Example Item 1 -->
             <div class="item">
-                <img src="https://images.unsplash.com/photo-1574122402067-62d88e50e3a7" alt="Potato">
+                <i class="fa fa-potato item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Potato</h3>
                     <p>Unit: 1 kg</p>
@@ -167,7 +163,7 @@
 
             <!-- Example Item 2 -->
             <div class="item">
-                <img src="https://images.unsplash.com/photo-1587735669271-d02b035e5a5e" alt="Onion">
+                <i class="fa fa-onion item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Onion</h3>
                     <p>Unit: 1 kg</p>
@@ -180,7 +176,7 @@
 
             <!-- Example Item 3 -->
             <div class="item">
-                <img src="https://images.unsplash.com/photo-1587496490497-2b35c4f1b3f6" alt="Rice">
+                <i class="fa fa-rice item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Rice</h3>
                     <p>Unit: 1 kg</p>
@@ -193,7 +189,7 @@
 
             <!-- Example Item 4 -->
             <div class="item">
-                <img src="https://images.unsplash.com/photo-1598778362321-779042d84d4b" alt="Tomato">
+                <i class="fa fa-tomato item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Tomato</h3>
                     <p>Unit: 1 kg</p>
@@ -206,7 +202,7 @@
 
             <!-- Example Item 5 -->
             <div class="item">
-                <img src="https://images.unsplash.com/photo-1599536857541-4e36945d2c4f" alt="Carrot">
+                <i class="fa fa-carrot item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Carrot</h3>
                     <p>Unit: 1 kg</p>
@@ -219,7 +215,7 @@
 
             <!-- Example Item 6 -->
             <div class="item">
-                <img src="https://images.unsplash.com/photo-1586110454826-846adfa51854" alt="Garlic">
+                <i class="fa fa-garlic item-icon" aria-hidden="true"></i>
                 <div class="item-info">
                     <h3>Garlic</h3>
                     <p>Unit: 1 kg</p>
@@ -232,54 +228,53 @@
 
             <!-- Example Item 7 -->
             <div class="item">
-                    <img src="https://images.unsplash.com/photo-1574190206165-0e2a1042f595" alt="Cucumber">
-                    <div class="item-info">
-                        <h3>Cucumber</h3>
-                        <p>Unit: 1 kg</p>
-                    </div>
-                    <div class="item-order">
-                        <div class="price">Rs. 20</div>
-                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cucumber%20%28Units:%201%20kg%29">Place Order</a>
-                    </div>
+                <i class="fa fa-cucumber item-icon" aria-hidden="true"></i>
+                <div class="item-info">
+                    <h3>Cucumber</h3>
+                    <p>Unit: 1 kg</p>
                 </div>
-
-                <!-- Example Item 8 -->
-                <div class="item">
-                    <img src="https://images.unsplash.com/photo-1597432335608-fc85957d4a83" alt="Eggplant">
-                    <div class="item-info">
-                        <h3>Eggplant</h3>
-                        <p>Unit: 1 kg</p>
-                    </div>
-                    <div class="item-order">
-                        <div class="price">Rs. 45</div>
-                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Eggplant%20%28Units:%201%20kg%29">Place Order</a>
-                    </div>
+                <div class="item-order">
+                    <div class="price">Rs. 20</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cucumber%20%28Units:%201%20kg%29">Place Order</a>
                 </div>
+            </div>
 
-                <!-- Example Item 9 -->
-                <div class="item">
-                    <img src="https://images.unsplash.com/photo-1574158622683-fc6db5794a52" alt="Bell Pepper">
-                    <div class="item-info">
-                        <h3>Bell Pepper</h3>
-                        <p>Unit: 1 kg</p>
-                    </div>
-                    <div class="item-order">
-                        <div class="price">Rs. 55</div>
-                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Bell%20Pepper%20%28Units:%201%20kg%29">Place Order</a>
-                    </div>
+            <!-- Example Item 8 -->
+            <div class="item">
+                <i class="fa fa-eggplant item-icon" aria-hidden="true"></i>
+                <div class="item-info">
+                    <h3>Eggplant</h3>
+                    <p>Unit: 1 kg</p>
                 </div>
+                <div class="item-order">
+                    <div class="price">Rs. 45</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Eggplant%20%28Units:%201%20kg%29">Place Order</a>
+                </div>
+            </div>
 
-                <!-- Example Item 10 -->
-                <div class="item">
-                    <img src="https://images.unsplash.com/photo-1546515132-4d28b6316b36" alt="Pumpkin">
-                    <div class="item-info">
-                        <h3>Pumpkin</h3>
-                        <p>Unit: 1 kg</p>
-                    </div>
-                    <div class="item-order">
-                        <div class="price">Rs. 60</div>
-                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Pumpkin%20%28Units:%201%20kg%29">Place Order</a>
-                    </div>
+            <!-- Example Item 9 -->
+            <div class="item">
+                <i class="fa fa-bell-pepper item-icon" aria-hidden="true"></i>
+                <div class="item-info">
+                    <h3>Bell Pepper</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 55</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Bell%20Pepper%20%28Units:%201%20kg%29">Place Order</a>
+                </div>
+            </div>
+
+            <!-- Example Item 10 -->
+            <div class="item">
+                <i class="fa fa-pumpkin item-icon" aria-hidden="true"></i>
+                <div class="item-info">
+                    <h3>Pumpkin</h3>
+                    <p>Unit: 1 kg</p>
+                </div>
+                <div class="item-order">
+                    <div class="price">Rs. 60</div>
+                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Pumpkin%20%28Units:%201%20kg%29">Place Order</a>
                 </div>
             </div>
         </div>
