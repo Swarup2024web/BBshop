@@ -12,6 +12,7 @@
             padding: 0;
             color: #333;
             background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         .header {
             display: flex;
@@ -69,7 +70,6 @@
             margin-bottom: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            position: relative;
         }
         .item img {
             width: 100px;
@@ -117,6 +117,19 @@
             }
             .nav-links {
                 gap: 10px;
+            }
+            .item img {
+                width: 80px;
+                height: 80px;
+            }
+            .item-info h3 {
+                font-size: 16px;
+            }
+            .item-info p {
+                font-size: 14px;
+            }
+            .item-order .price {
+                font-size: 16px;
             }
         }
     </style>
@@ -219,60 +232,57 @@
 
             <!-- Example Item 7 -->
             <div class="item">
-                <img src="https://images.unsplash.com/photo-1574190206165-0e2a1042f595" alt="Cucumber">
-                <div class="item-info">
-                    <h3>Cucumber</h3>
-                    <p>Unit: 1 kg</p>
+                    <img src="https://images.unsplash.com/photo-1574190206165-0e2a1042f595" alt="Cucumber">
+                    <div class="item-info">
+                        <h3>Cucumber</h3>
+                        <p>Unit: 1 kg</p>
+                    </div>
+                    <div class="item-order">
+                        <div class="price">Rs. 20</div>
+                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cucumber%20%28Units:%201%20kg%29">Place Order</a>
+                    </div>
                 </div>
-                <div class="item-order">
-                    <div class="price">Rs. 20</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Cucumber%20%28Units:%201%20kg%29">Place Order</a>
-                </div>
-            </div>
 
-            <!-- Example Item 8 -->
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1590785470136-c2d54f7e0207" alt="Spinach">
-                <div class="item-info">
-                    <h3>Spinach</h3>
-                    <p>Unit: 1 kg</p>
+                <!-- Example Item 8 -->
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1597432335608-fc85957d4a83" alt="Eggplant">
+                    <div class="item-info">
+                        <h3>Eggplant</h3>
+                        <p>Unit: 1 kg</p>
+                    </div>
+                    <div class="item-order">
+                        <div class="price">Rs. 45</div>
+                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Eggplant%20%28Units:%201%20kg%29">Place Order</a>
+                    </div>
                 </div>
-                <div class="item-order">
-                    <div class="price">Rs. 45</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Spinach%20%28Units:%201%20kg%29">Place Order</a>
-                </div>
-            </div>
 
-            <!-- Example Item 9 -->
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1565888757-3a1d4f5967ec" alt="Bell Pepper">
-                <div class="item-info">
-                    <h3>Bell Pepper</h3>
-                    <p>Unit: 1 kg</p>
+                <!-- Example Item 9 -->
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1574158622683-fc6db5794a52" alt="Bell Pepper">
+                    <div class="item-info">
+                        <h3>Bell Pepper</h3>
+                        <p>Unit: 1 kg</p>
+                    </div>
+                    <div class="item-order">
+                        <div class="price">Rs. 55</div>
+                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Bell%20Pepper%20%28Units:%201%20kg%29">Place Order</a>
+                    </div>
                 </div>
-                <div class="item-order">
-                    <div class="price">Rs. 55</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Bell%20Pepper%20%28Units:%201%20kg%29">Place Order</a>
-                </div>
-            </div>
 
-            <!-- Example Item 10 -->
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1591188073405-4a6e4dbcbeb4" alt="Pumpkin">
-                <div class="item-info">
-                    <h3>Pumpkin</h3>
-                    <p>Unit: 1 kg</p>
-                </div>
-                <div class="item-order">
-                    <div class="price">Rs. 70</div>
-                    <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Pumpkin%20%28Units:%201%20kg%29">Place Order</a>
+                <!-- Example Item 10 -->
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1546515132-4d28b6316b36" alt="Pumpkin">
+                    <div class="item-info">
+                        <h3>Pumpkin</h3>
+                        <p>Unit: 1 kg</p>
+                    </div>
+                    <div class="item-order">
+                        <div class="price">Rs. 60</div>
+                        <a href="https://wa.me/916294390641?text=I%20would%20like%20to%20order%20Pumpkin%20%28Units:%201%20kg%29">Place Order</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // Optional: Add any JavaScript functionality here if needed
-    </script>
 </body>
 </html>
