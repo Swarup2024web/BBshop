@@ -36,6 +36,20 @@
         .header h1 {
             margin: 0;
             font-size: 24px;
+            flex-grow: 1;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #d9534f;
         }
         .content {
             padding: 20px;
@@ -94,19 +108,30 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            text-align: center;
+            text-align: left;
         }
         .home-delivery h2 {
             color: #d9534f;
             margin-bottom: 10px;
         }
-        .home-delivery p {
-            font-size: 16px;
-            line-height: 1.5;
+        .home-delivery ul {
+            list-style: none;
+            padding-left: 0;
         }
-        .home-delivery .highlight {
+        .home-delivery ul li {
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        .home-delivery ul li::before {
+            content: "*";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #d9534f;
             font-weight: bold;
-            color: #333;
         }
         @media (max-width: 600px) {
             .header {
@@ -115,6 +140,10 @@
             }
             .logo {
                 margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
             }
             .contact-info a {
                 display: block;
@@ -128,6 +157,11 @@
     <div class="header">
         <div class="logo">B</div>
         <h1>Banerjee Shop</h1>
+        <div class="nav-links">
+            <a href="groceries.html">Groceries</a>
+            <a href="food-items.html">Food Items</a>
+            <a href="others.html">Others</a>
+        </div>
     </div>
     <div class="content">
         <h2>Welcome to Banerjee Shop!</h2>
@@ -140,8 +174,10 @@
     </div>
     <div class="home-delivery">
         <h2>Home Delivery</h2>
-        <p>We deliver only to <span class="highlight">Pakurtala, Rajuakhaki, and Bahirchak</span>.</p>
-        <p><span class="highlight">Delivery is free</span> for purchases above Rs. 399.</p>
+        <ul>
+            <li>We deliver only to Pakurtala, Rajuakhaki, and Bahirchak.</li>
+            <li>Delivery is free for purchases above Rs. 399.</li>
+        </ul>
     </div>
 </body>
 </html>
